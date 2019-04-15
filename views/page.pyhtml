@@ -1,0 +1,32 @@
+<h1>${title}</h1>
+<style>
+.odd{
+	background-color:#ff0000;
+}
+
+.even{
+	background-color:#00ff00;
+}
+
+</style>
+<table>
+  <?py i = 0 ?>
+  <?py for item in items: ?>
+  <?py     i += 1 ?>
+  <?py     klass = i % 2 and 'odd' or 'even' ?> 
+  <tr class="#{klass}">
+    <td>${item}</td>
+  </tr>
+  <?py #endfor ?>
+</table>
+<table>
+  <?py i = 0 ?>
+  <?py for k,v in rec.items(): ?>
+  <?py     i += 1 ?>
+  <?py     klass = i % 2 and 'odd' or 'even' ?> 
+  <tr class="#{klass}">
+    <td>${k}</td>
+    <td>${v}</td>
+  </tr>
+  <?py #endfor ?>
+</table>
